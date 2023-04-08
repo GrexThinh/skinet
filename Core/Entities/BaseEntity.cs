@@ -2,7 +2,7 @@
 
 namespace Core.Entities
 {
-    public class BaseEnity
+    public class BaseEntity
     {
         public int Id { get; set; }
     }
