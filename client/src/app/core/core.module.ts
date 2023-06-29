@@ -30,7 +30,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
       preventDuplicates: true
     }),
     BreadcrumbModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    SharedModule,
   ],
   exports: [
     NavBarComponent,

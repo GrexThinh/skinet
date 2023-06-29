@@ -10,9 +10,10 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { HomeModule } from './home/home.module';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
+import { AccountLoginComponent } from './account-login/account-login.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, AccountLoginComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
