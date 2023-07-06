@@ -30,10 +30,10 @@
   <button
     [disabled]="
       loading ||
-      checkoutForm.get('paymentForm').invalid ||
-      !cardNumberValid ||
-      !cardExpiryValid ||
-      !cardCvcValid
+      checkoutForm.get('paymentForm')?.invalid ||
+      !cardNumber ||
+      !cardExpiry ||
+      !cardCvc
     "
     type="button"
     class="btn btn-primary"

@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { AccountService } from 'src/app/account/account.service';
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-checkout-address',
@@ -9,7 +10,10 @@ import { AccountService } from 'src/app/account/account.service';
   styleUrls: ['./checkout-address.component.scss'],
 })
 export class CheckoutAddressComponent {
-  @Input() checkoutForm?: FormGroup;
+  @Input() checkoutForm!: FormGroup;
+
+  faAngleLeft = faAngleLeft;
+  faAngleRight = faAngleRight;
 
   constructor(
     private accountService: AccountService,

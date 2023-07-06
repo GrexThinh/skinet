@@ -26,7 +26,7 @@
     <fa-icon [icon]="faAngleLeft"></fa-icon> Back to Address
   </button>
   <button
-    [disabled]="checkoutForm.get('deliveryForm').invalid"
+    [disabled]="checkoutForm.get('deliveryForm')?.invalid"
     type="button"
     class="btn btn-primary"
     cdkStepperNext

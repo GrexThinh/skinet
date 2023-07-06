@@ -1,6 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { BasketItem } from '../models/basket';
 import { BasketService } from 'src/app/basket/basket.service';
+import {
+  faMinusCircle,
+  faPlusCircle,
+  faTrashAlt,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-basket-summary',
@@ -8,6 +13,10 @@ import { BasketService } from 'src/app/basket/basket.service';
   styleUrls: ['./basket-summary.component.scss']
 })
 export class BasketSummaryComponent {
+  faMinusCircle = faMinusCircle;
+  faPlusCircle = faPlusCircle;
+  faTrashAlt = faTrashAlt;
+  
   @Output() addItem = new EventEmitter<BasketItem>();
   @Output() removeItem = new EventEmitter<{id: number, quantity: number}>();
   @Input() isBasket = true;

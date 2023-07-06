@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { DeliveryMethod } from 'src/app/shared/models/deliveryMethod';
 import { CheckoutService } from '../checkout.service';
 import { BasketService } from 'src/app/basket/basket.service';
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-checkout-delivery',
@@ -10,8 +11,11 @@ import { BasketService } from 'src/app/basket/basket.service';
   styleUrls: ['./checkout-delivery.component.scss'],
 })
 export class CheckoutDeliveryComponent implements OnInit {
-  @Input() checkoutForm?: FormGroup;
+  @Input() checkoutForm!: FormGroup;
   deliveryMethods: DeliveryMethod[] = [];
+
+  faAngleLeft = faAngleLeft;
+  faAngleRight = faAngleRight;
 
   constructor(private checkoutService: CheckoutService, private basketService: BasketService) {}
 

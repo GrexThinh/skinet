@@ -1,7 +1,7 @@
-<ng-container *ngIf="items.length > 0">
+<ng-container *ngIf="true">
   <div class="table-responsive">
     <table class="table table-borderless">
-      <thead [class.thead-light]="isBasket || isOrder" class="border-0 py-2">
+      <thead [class.thead-light]="isBasket" class="border-0 py-2">
         <tr>
           <th scope="col">
             <div class="p-2 px-3 text-uppercase">Product</div>
@@ -21,7 +21,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of items" class="border-0">
+        <!-- <tr *ngFor="let item of items" class="border-0">
           <td scope="row">
             <div class="p-2">
               <img
@@ -58,7 +58,7 @@
             >
               <fa-icon
                 *ngIf="isBasket"
-                (click)="decrementItemQuantity(item)"
+                
                 [icon]="faMinusCircle"
                 style="cursor: pointer"
                 class="text-warning mr-2"
@@ -68,7 +68,7 @@
               </span>
               <fa-icon
                 *ngIf="isBasket"
-                (click)="incrementItemQuantity(item)"
+                
                 [icon]="faPlusCircle"
                 style="cursor: pointer"
                 class="text-warning mx-2"
@@ -89,7 +89,7 @@
               class="text-danger"
             ></fa-icon>
           </td>
-        </tr>
+        </tr> -->
       </tbody>
     </table>
   </div>

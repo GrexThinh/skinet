@@ -2,6 +2,11 @@ import { Component } from '@angular/core';
 import { AccountService } from 'src/app/account/account.service';
 import { BasketService } from 'src/app/basket/basket.service';
 import { BasketItem } from 'src/app/shared/models/basket';
+import {
+  faShoppingCart,
+  faHistory,
+  faSignOutAlt,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,6 +14,10 @@ import { BasketItem } from 'src/app/shared/models/basket';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent {
+  faShoppingCart = faShoppingCart;
+  faHistory = faHistory;
+  faSignOutAlt = faSignOutAlt;
+  
   constructor(public basketService: BasketService, public accountService: AccountService) {}
 
   getCount(items: BasketItem[]) {

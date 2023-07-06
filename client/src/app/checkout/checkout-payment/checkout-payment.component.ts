@@ -15,6 +15,7 @@ import {
 } from '@stripe/stripe-js';
 import { firstValueFrom } from 'rxjs';
 import { IOrderToCreate } from 'src/app/shared/models/order';
+import { faAngleLeft, faAngleRight, faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-checkout-payment',
@@ -22,7 +23,7 @@ import { IOrderToCreate } from 'src/app/shared/models/order';
   styleUrls: ['./checkout-payment.component.scss'],
 })
 export class CheckoutPaymentComponent implements OnInit {
-  @Input() checkoutForm?: FormGroup;
+  @Input() checkoutForm!: FormGroup;
   @ViewChild('cardNumber') cardNumberElement?: ElementRef;
   @ViewChild('cardExpiry') cardExpiryElement?: ElementRef;
   @ViewChild('cardCvc') cardCvcElement?: ElementRef;
@@ -35,6 +36,10 @@ export class CheckoutPaymentComponent implements OnInit {
   cardCvcComplete = false;
   cardErrors: any;
   loading = false;
+
+  faAngleLeft = faAngleLeft;
+  faAngleRight = faAngleRight;
+  faSpinner = faSpinner;
 
   constructor(
     private basketService: BasketService,

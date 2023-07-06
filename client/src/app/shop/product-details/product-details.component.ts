@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { BreadcrumbService } from 'xng-breadcrumb';
 import { BasketService } from 'src/app/basket/basket.service';
 import { take } from 'rxjs';
+import { faMinusCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-product-details',
@@ -15,6 +16,9 @@ export class ProductDetailsComponent implements OnInit {
   product?: Product;
   quantity = 1;
   quantityInBasket = 0;
+
+  faMinusCircle = faMinusCircle;
+  faPlusCircle = faPlusCircle;
 
   constructor(
     private shopService: ShopService,
