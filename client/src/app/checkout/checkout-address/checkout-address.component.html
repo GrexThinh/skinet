@@ -6,8 +6,8 @@
       class="btn btn-outline-success mb-3"
       (click)="saveUserAddress()"
       [disabled]="
-        !checkoutForm?.get('addressForm')?.dirty ||
-        !checkoutForm?.get('addressForm')?.valid
+        !checkoutForm.get('addressForm').dirty ||
+        !checkoutForm.get('addressForm').valid
       "
     >
       Save as default address
@@ -57,7 +57,7 @@
     <fa-icon [icon]="faAngleLeft"></fa-icon> Back to Basket
   </button>
   <button
-    [disabled]="checkoutForm?.get('addressForm')?.invalid"
+    [disabled]="checkoutForm.get('addressForm').invalid"
     type="button"
     class="btn btn-primary"
     cdkStepperNext

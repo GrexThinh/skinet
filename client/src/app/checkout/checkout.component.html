@@ -4,7 +4,7 @@
       <app-stepper [linearModeSelected]="true" #appStepper>
         <cdk-step
           [label]="'Address'"
-          [completed]="checkoutForm.get('addressForm')?.valid"
+          [completed]="checkoutForm.get('addressForm').valid"
         >
           <app-checkout-address
             [checkoutForm]="checkoutForm"
@@ -12,7 +12,7 @@
         </cdk-step>
         <cdk-step
           [label]="'Delivery'"
-          [completed]="checkoutForm.get('deliveryForm')?.valid"
+          [completed]="checkoutForm.get('deliveryForm').valid"
         >
           <app-checkout-delivery
             [checkoutForm]="checkoutForm"
@@ -30,7 +30,10 @@
     </div>
     <div class="col-4">
       <app-order-totals
-        *ngIf="true"
+        *ngIf="basketTotal$ | async as basketTotal"
+        [shippingPrice]="basketTotal.shipping"
+        [subtotal]="basketTotal.subtotal"
+        [total]="basketTotal.total"
       ></app-order-totals>
     </div>
   </div>

@@ -8,19 +8,20 @@ import { OrdersService } from './orders.service';
   styleUrls: ['./orders.component.scss'],
 })
 export class OrdersComponent implements OnInit {
-  orders?: IOrder[];
+  orders: IOrder[];
 
   constructor(private ordersService: OrdersService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getOrders();
   }
 
   getOrders() {
-    this.ordersService.getOrdersForUser().subscribe({
-      next: (orders: IOrder[]) => {
+    this.ordersService.getOrdersForUser().subscribe(
+      (orders: IOrder[]) => {
         this.orders = orders;
       },
-    });
+      (error) => console.log(error)
+    );
   }
 }

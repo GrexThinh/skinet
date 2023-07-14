@@ -2,7 +2,7 @@
   <div class="row">
     <div class="form-group col-12" formGroupName="paymentForm">
       <app-text-input
-        [label]="'Name on card'"
+        [label]="'Name onf card'"
         formControlName="nameOnCard"
       ></app-text-input>
     </div>
@@ -30,10 +30,10 @@
   <button
     [disabled]="
       loading ||
-      checkoutForm.get('paymentForm')?.invalid ||
-      !cardNumber ||
-      !cardExpiry ||
-      !cardCvc
+      checkoutForm.get('paymentForm').invalid ||
+      !cardNumberValid ||
+      !cardExpiryValid ||
+      !cardCvcValid
     "
     type="button"
     class="btn btn-primary"

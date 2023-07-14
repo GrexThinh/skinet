@@ -34,11 +34,11 @@
   <div class="d-flex align-items-center">
     <a routerLink="/basket" class="position-relative">
       <fa-icon [icon]="faShoppingCart" size="2x" class="mr-5"></fa-icon>
-      <div *ngIf="true" class="cart-no">
-        
+      <div *ngIf="basket$ | async as basket" class="cart-no">
+        {{ basket.items.length }}
       </div>
     </a>
-    <ng-container *ngIf="true">
+    <ng-container *ngIf="!(currentUser$ | async)">
       <button
         routerLink="/account/login"
         class="btn btn-outline-success my-2 my-sm-0 mr-2"
@@ -52,10 +52,10 @@
         Sign up
       </button>
     </ng-container>
-    <ng-container *ngIf="true">
+    <ng-container *ngIf="currentUser$ | async">
       <div class="dropdown ml-3 mr-5" dropdown>
         <a class="dropdown-toggle" style="cursor: pointer" dropdownToggle>
-          <!-- <strong>Welcome {{ (currentUser$ | async).displayName }}</strong> -->
+          <strong>Welcome {{ (currentUser$ | async).displayName }}</strong>
         </a>
         <div
           class="dropdown-menu dropdown-menu-right"

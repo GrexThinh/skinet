@@ -1,9 +1,9 @@
-import { Address } from './user';
+import { IAddress } from './address';
 
 export interface IOrderToCreate {
   basketId: string;
   deliveryMethodId: number;
-  shipToAddress: Address;
+  shipToAddress: IAddress;
 }
 
 export interface IOrderItem {
@@ -18,7 +18,7 @@ export interface IOrder {
   id: number;
   buyerEmail: string;
   orderDate: Date;
-  shipToAddress: Address;
+  shipToAddress: IAddress;
   deliveryMethod: string;
   shippingPrice: number;
   orderItems: IOrderItem[];
